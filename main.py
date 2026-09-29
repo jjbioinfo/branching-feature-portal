@@ -1,13 +1,15 @@
-"""Initial User Portal application on the main branch."""
+"""User Portal after merging the login feature."""
 
 from logging_config import configure_logging
+from login import LoginService
 
 
 def main() -> int:
-    """Display the initial application before feature development."""
+    """Demonstrate the login feature."""
     configure_logging()
+    login_service = LoginService({"asha": "python123"})
     print("User Portal")
-    print("Features will be developed on separate Git branches.")
+    print(f"Login successful: {login_service.authenticate('asha', 'python123')}")
     return 0
 
 
